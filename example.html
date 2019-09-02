@@ -10,38 +10,21 @@
 </head>
 <body>
     <div class="container">
-        <h1>Vue Js:Computed</h1>
-        <ul>
-            <li>Computed</li>
-        </ul>
+        <h1>Vue Js: V-If e Cicli For</h1>
         <hr>
         <div id="app">
+            Var : {{ show }}
+            <button @click="show = !show">Change</button>
 
-           <h2>Contatore</h2>
-
-                <p style="font-size:12em">{{ counter }}</p>
-                <div class="row">
-                    <div class="col-6">
-                        <button  @click="changeCounter('+')" style="font-size:6em">+</button>
-                    </div>
-                    <div class="col-6">
-                        <button  @click="changeCounter('-')" style="font-size:6em">-</button>
-                    </div>
-                    <hr>
-                    <h2>{{ limiteF() }}</h2>
-                    COMPUTED
-                    <h2>{{ limit }}</h2>
-<h2>{{ textMy }}</h2>
-                    <button @click="my"> MY</button>
-                    <br>
-                   
-                </div>
-                <br>
-                <br>
-                <hr>
-                <h2>{{ nome }}</h2>
-                <input v-model="nome">
-                <button @click="nome = 'MARCO'">CHANGE</button>
+            <div v-show="show" class="one">
+                <h1>One</h1>
+            </div>
+            <div v-show="!show" class="two">
+                <h1>Two</h1>
+            </div>
+           
+          
+           
         </div>
     </div>
 </body>
@@ -49,50 +32,13 @@
 var app = new Vue({
     el: '#app',
     data: {
-        counter : '0',
-        textMy : 0,
-        nome : ''
+       show : false
     },
     mounted : function(){
-        console.log('MONTATO CORRETTAMENTE');
-        this.counter = 3;
-    },
-    computed : {
-        limit : function(){
-            console.log('-->computed');
-            if(this.counter <= 0){
-                return 'MINORE';
-            }else{
-                return "MAGGIORE";
-            }
-        }
-    },
-    watch : {
-        counter : function(value){
-            if(value == 5){
-                this.textMy = "Valore 3"
-            }
-        }
+        
     },
     methods : {
-        changeCounter(direction){
-            if(direction == '+'){
-                this.counter++;
-            }else if(direction == '-'){
-                this.counter--;
-            }
-        },
-        limiteF(){
-            console.log('FUNCTION');
-            if(this.counter <= 0){
-                return 'MINORE';
-            }else{
-                return "MAGGIORE";
-            }
-        },
-        my(){
-            this.textMy = Math.random();
-        }
+        
     }
 })
 </script>

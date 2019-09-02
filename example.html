@@ -16,12 +16,18 @@
             Var : {{ show }}
             <button @click="show = !show">Change</button>
 
-            <div v-show="show" class="one">
+            <div v-if="show" class="one">
                 <h1>One</h1>
             </div>
-            <div v-show="!show" class="two">
+            <div v-if="!show" class="two">
                 <h1>Two</h1>
             </div>
+
+            <template v-if="show">
+                <div class="one">
+                    <h1>test</h1>
+                </div>
+            </template>
            
           
            

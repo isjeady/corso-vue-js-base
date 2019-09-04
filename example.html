@@ -13,9 +13,11 @@
         <h1>Vue Js: V-If e Cicli For</h1>
         <hr>
         <div id="app">
-            <ul>
-                <li v-for="(colore,index) in colori">{{ index }} : {{ colore }}</li>
-            </ul>
+            <template v-for="num in 3">
+                <ul>
+                    <li v-for="(colore,index) in colori">{{ index }} : {{ colore }}</li>
+                </ul>
+            </template>
 
             <h2>Articoli</h2>
             <hr>

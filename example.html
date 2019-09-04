@@ -16,6 +16,12 @@
             <ul>
                 <li v-for="(colore,index) in colori">{{ index }} : {{ colore }}</li>
             </ul>
+
+            <h2>Articoli</h2>
+            <hr>
+            <ul>
+                <li v-for="(articolo,index) in articoli">{{ index }} : {{ articolo.categoria }}</li>
+            </ul>
         </div>
     </div>
 </body>
@@ -23,7 +29,12 @@
 var app = new Vue({
     el: '#app',
     data: {
-       colori : ['rosso','giallo','verde','arancione','rosso']
+       colori : ['rosso','giallo','verde','arancione','rosso'],
+       articoli : [
+            { id : Math.random(),nome : 'mouse' , prezzo  : '25', 'categoria' : 'informatica' },
+            { id : Math.random(),nome : 'videocamera' , prezzo  : '250', 'categoria' : 'video' },
+            { id : Math.random(),nome : 'tv' , prezzo  : '500', 'categoria' : 'televisioni' },
+       ]
     },
     mounted : function(){
         

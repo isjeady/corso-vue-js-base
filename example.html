@@ -20,7 +20,12 @@
             <h2>Articoli</h2>
             <hr>
             <ul>
-                <li v-for="(articolo,index) in articoli">{{ index }} : {{ articolo.categoria }}</li>
+                <li v-for="(articolo,index) in articoli">
+                    Articolo Numero : {{ index }}:
+                    <p  v-for="(attributo,key,i) in articolo">
+                        {{ i }} - {{ key }} : {{ attributo }}
+                    </p>
+                </li>
             </ul>
         </div>
     </div>

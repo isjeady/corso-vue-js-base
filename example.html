@@ -13,22 +13,18 @@
         <h1>Vue Js: V-If e Cicli For</h1>
         <hr>
         <div id="app">
-            <template v-for="num in 3">
-                <ul>
-                    <li v-for="(colore,index) in colori">{{ index }} : {{ colore }}</li>
-                </ul>
-            </template>
-
             <h2>Articoli</h2>
             <hr>
             <ul>
-                <li v-for="(articolo,index) in articoli">
-                    Articolo Numero : {{ index }}:
-                    <p  v-for="(attributo,key,i) in articolo">
+                <li v-for="(articolo,index) in articoli" :key="articolo.id">
+                    <h2>Articolo Numero : {{ index }}:</h2>
+                    <h5  v-for="(attributo,key,i) in articolo">
                         {{ i }} - {{ key }} : {{ attributo }}
-                    </p>
+                    </h5>
                 </li>
             </ul>
+
+            <button @click="pushArticolo"> New + </button>
         </div>
     </div>
 </body>
@@ -47,7 +43,10 @@ var app = new Vue({
         
     },
     methods : {
-        
+        pushArticolo(){
+            var newArticolo = { id : Math.random(),nome : 'smart' , prezzo  : '125', 'categoria' : 'phone' };
+          this.articoli.splice(1, 0, newArticolo);
+        }
     }
 })
 </script>

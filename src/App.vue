@@ -10,7 +10,10 @@
     <hr>
     <div class="row">
       <div class="col-md-6">
-        <componente-a :colore="coloreInApp"></componente-a>
+        <componente-a 
+          :colore="coloreInApp"
+          @eventoDiReset="coloreInApp = $event"
+        ></componente-a>
       </div>
       <div class="col-md-6">
         <componente-b></componente-b>
@@ -26,16 +29,23 @@
 import ComponenteA from '@/components/ComponenteA.vue'
 import ComponenteB from '@/components/ComponenteB.vue'
 
+
 export default {
   name : 'app',
   components : {
     ComponenteA,
     ComponenteB
   },
+  created : {
+
+  },
   data(){
     return {
       coloreInApp : 'Verde'
     }
+  },
+  methods : {
+   
   }
 }
 </script>

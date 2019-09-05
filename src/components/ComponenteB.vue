@@ -8,8 +8,12 @@
 
 
 <script>
+import {eventBus} from '../main.js';
 export default {
     name : 'MioPrimoComponente',
+    created(){
+        eventBus.$on('cambioColore',(v)=>{this.myVar = v;});
+    },
     data() {
         return {
             myVar : 'Bianco'

@@ -63,6 +63,9 @@ export default {
        'actionProfile'
     ]),
     get(){
+      
+      console.log('GET');
+
       var url  = '/posts';
       var payload = this.post;
       this.loading = true;
@@ -79,5 +82,9 @@ export default {
         });
     }
   },
+  mounted(){
+    console.log('mounted');
+    this.get();
+  }
 }
 </script>

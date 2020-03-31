@@ -4,7 +4,7 @@
     <ul class="list-group list-group-flush">
       <li class="list-group-item"><b>Nome : </b>{{ getName }}</li>
       <li class="list-group-item"><b>getNameSettings : </b>{{ getNameSettings }}</li>
-      <li class="list-group-item"><b>Cognome : </b>mio Cognome</li>
+      <li class="list-group-item"><b>Cognome : </b>{{ getCognome }}</li>
       <li class="list-group-item"><b>Email : </b>{{ getEmail }}</li>
     </ul>
   </div>
@@ -28,6 +28,7 @@ export default {
   computed : {
       ...mapGetters({
           'getName': 'profile/getName',
+          'getCognome': 'profile/getCognome',
           'getNameSettings': 'settings/getName',
           'getEmail':'profile/getEmail'
       })

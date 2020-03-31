@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          Benvenuto : {{ nome }}
+          Benvenuto : {{ getName }}
         </div>
       </div>
       <hr>
@@ -37,8 +37,13 @@ export default {
   },
   computed : {
      ...mapState([
-        'nome'
-      ])
+        'profile.nome'
+       ]),
+       ...mapGetters({
+          'getName': 'profile/getName',
+          'getNameSettings': 'settings/getName',
+          'getEmail':'profile/getEmail'
+      })
   },
   methods : {
      resetF(){

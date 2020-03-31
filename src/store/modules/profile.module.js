@@ -9,6 +9,9 @@ const getters = {
   getName : (state,getters,rootState,rootGetters) => {
     return state.nome + " -" + rootGetters['settings/getName'];
   },
+  getCognome : (state,getters,rootState,rootGetters) => {
+    return state.cognome;
+  },
   getEmail : state => {
     return state.email;
   }
